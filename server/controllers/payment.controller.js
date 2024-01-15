@@ -21,7 +21,8 @@ export const buySubscription = async (req, res, next) => {
     try {
         const { id } = req.user;
 
-        console.log("id>>>", id)
+        console.log("id>>>", id);
+        
         const user = await userModel.findById(id);
 
         console.log("User >>>", user)

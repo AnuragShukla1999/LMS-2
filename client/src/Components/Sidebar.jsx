@@ -131,11 +131,11 @@ export default function Sidebar({ hideBar = false }) {
             {isLoggedIn ? (
               <li className="absolute bottom-4 w-[90%]">
                 <div className="w-full flex md:flex-row flex-col gap-2 items-center justify-center">
-                  <button className="bg-violet-700 px-3.5 py-2.5 font-semibold rounded-md w-full">
+                  <button className="bg-violet-700 px-3.5 py-2.5 font-semibold rounded-md w-full text-white">
                     <Link to="/user/profile">Profile</Link>
                   </button>
                   <button
-                    className="bg-pink-700 px-3.5 py-2.5 font-semibold rounded-md w-full"
+                    className="bg-pink-700 px-3.5 py-2.5 font-semibold rounded-md w-full text-white"
                     onClick={onLogout}
                     disabled={isLoading}
                   >
