@@ -30,22 +30,22 @@ const initialState = {
 
 
 
-////           ..................    Sigup  ..............
+////           ..................    SignUp  ..............
 export const createAccount = createAsyncThunk('/auth/signup', async (data) => {
     try {
-      const res = axiosInstance.post("/user/register",data);
-      toast.promise(res, {
-        loading : 'Wait! Creating your account',
-        success : (data) => {
-          return data?.data?.message
-        },
-        error : 'Failed to create account'
-      })
-      return (await res).data
+        const res = axiosInstance.post("/user/register", data);
+        toast.promise(res, {
+            loading: 'Wait! Creating your account',
+            success: (data) => {
+                return data?.data?.message
+            },
+            error: 'Failed to create account'
+        })
+        return (await res).data
     } catch (error) {
-      toast.error(error?.response?.data?.message)
+        toast.error(error?.response?.data?.message)
     }
-  })
+})
 
 
 
@@ -129,7 +129,7 @@ export const forgetPassword = createAsyncThunk(
     async (email) => {
         const loadingMessage = toast.loading("Please Wait! sending email...");
         try {
-            const res = await axiosInstance.post("/user/reset", {email});
+            const res = await axiosInstance.post("/user/reset", { email });
             toast.success(res?.data?.message, { id: loadingMessage });
             return res?.data
         } catch (error) {
